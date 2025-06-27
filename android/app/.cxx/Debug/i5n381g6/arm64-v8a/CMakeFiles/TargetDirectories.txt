@@ -1,0 +1,2 @@
+C:/Users/Kenyi/Desktop/zzzz/moviles2Proyecto/android/app/.cxx/Debug/i5n381g6/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Kenyi/Desktop/zzzz/moviles2Proyecto/android/app/.cxx/Debug/i5n381g6/arm64-v8a/CMakeFiles/rebuild_cache.dir

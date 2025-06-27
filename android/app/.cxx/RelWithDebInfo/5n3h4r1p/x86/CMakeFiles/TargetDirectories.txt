@@ -1,0 +1,2 @@
+C:/Users/Win/Desktop/moviles2Proyecto/android/app/.cxx/RelWithDebInfo/5n3h4r1p/x86/CMakeFiles/edit_cache.dir
+C:/Users/Win/Desktop/moviles2Proyecto/android/app/.cxx/RelWithDebInfo/5n3h4r1p/x86/CMakeFiles/rebuild_cache.dir

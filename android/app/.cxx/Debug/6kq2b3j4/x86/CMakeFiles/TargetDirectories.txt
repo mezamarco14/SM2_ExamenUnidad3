@@ -1,0 +1,2 @@
+C:/Users/HP/Documents/GitHub/moviles2Proyecto/android/app/.cxx/Debug/6kq2b3j4/x86/CMakeFiles/edit_cache.dir
+C:/Users/HP/Documents/GitHub/moviles2Proyecto/android/app/.cxx/Debug/6kq2b3j4/x86/CMakeFiles/rebuild_cache.dir

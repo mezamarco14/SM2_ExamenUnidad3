@@ -1,0 +1,2 @@
+C:/Users/HP/Documents/GitHub/moviles2Proyecto/android/app/.cxx/Debug/4e4l1y56/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/HP/Documents/GitHub/moviles2Proyecto/android/app/.cxx/Debug/4e4l1y56/armeabi-v7a/CMakeFiles/rebuild_cache.dir
