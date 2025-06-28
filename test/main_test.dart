@@ -3,7 +3,9 @@ import 'package:mockito/mockito.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
-import 'package:SM2_ExamenUnidad3/lib/services/auth_service.dart'; 
+import 'package:SM2_ExamenUnidad3/services/auth_service.dart';
+
+
 
 class MockGoogleSignIn extends Mock implements GoogleSignIn {}
 class MockGoogleSignInAccount extends Mock implements GoogleSignInAccount {}
