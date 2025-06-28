@@ -13,7 +13,7 @@ class FakeReportMapScreen extends StatefulWidget {
 }
 
 class _FakeReportMapScreenState extends State<FakeReportMapScreen> {
-  GoogleMapController? _mapController;
+  GoogleMapController?;
   int _reportCounter = 1;
   bool _isSubmitting = false;
   Set<Marker> _markers = {};
@@ -290,7 +290,6 @@ class _FakeReportMapScreenState extends State<FakeReportMapScreen> {
           GoogleMap(
             initialCameraPosition: _kInitialPosition,
             onMapCreated: (GoogleMapController controller) {
-              _mapController = controller;
             },
             onTap: _handleMapTap,
             markers: _markers,

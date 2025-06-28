@@ -94,7 +94,7 @@ class _NoticiasScreenState extends State<NoticiasScreen> {
                           width: double.infinity,
                           color: Colors.grey[200],
                           child: Image.network(
-                            noticia.imagen_url,
+                            noticia.imagenUrl,
                             fit: BoxFit.cover,
                             loadingBuilder: (context, child, loadingProgress) {
                               if (loadingProgress == null) return child;

@@ -141,7 +141,7 @@ class CustomHeatmapTileProvider implements TileProvider {
     
     // Crear la imagen del mapa de calor
     final ui.PictureRecorder recorder = ui.PictureRecorder();
-    final Canvas canvas = Canvas(recorder);
+
     final Paint paint = Paint();
     
     // Escalar la matriz de intensidad de vuelta al tamaño del tile
@@ -231,7 +231,7 @@ class CustomHeatmapTileProvider implements TileProvider {
   // Métodos auxiliares sin cambios
   Future<Uint8List> _createTransparentTileBytes(int width, int height) async {
     final ui.PictureRecorder recorder = ui.PictureRecorder();
-    final Canvas canvas = Canvas(recorder);
+
     final ui.Picture picture = recorder.endRecording();
     final ui.Image image = await picture.toImage(width, height);
     final ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);

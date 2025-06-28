@@ -40,7 +40,7 @@ class AuthService {
       }
       return userCredential;
     } catch (e) {
-      print('Error en login con Google: $e');
+      debugPrint('Error en login con Google: $e');
       rethrow;
     }
   }
@@ -57,7 +57,7 @@ class AuthService {
       }
       return userCredential;
     } catch (e) {
-      print('Error en login con email: $e');
+      debugPrint('Error en login con email: $e');
       rethrow;
     }
   }
@@ -67,7 +67,7 @@ class AuthService {
       final UserCredential userCredential = await _auth.signInAnonymously();
       return userCredential;
     } catch (e) {
-      print('Error en login anonimo: $e');
+      debugPrint('Error en login anonimo: $e');
       rethrow;
     }
   }
@@ -116,14 +116,14 @@ class AuthService {
       }
       return userCredential;
     } catch (e) {
-      print('Error en registro: $e');
+      debugPrint('Error en registro: $e');
       rethrow;
     }
   }
 
   static Future<void> _saveUserToFirestore(User user) async {
     if (user.email == null) {
-      print("Error: user.email es null en _saveUserToFirestore");
+      debugPrint("Error: user.email es null en _saveUserToFirestore");
       return;
     }
     try {
@@ -149,16 +149,16 @@ class AuthService {
       }
       
       await userDocRef.set(userDataToSave, SetOptions(merge: true));
-      print('Usuario ${user.email} guardado/actualizado en Firestore.');
+      debugPrint('Usuario ${user.email} guardado/actualizado en Firestore.');
       await updateUserFCMToken(user.email!);
     } catch (e) {
-      print('Error guardando usuario en Firestore: $e');
+      debugPrint('Error guardando usuario en Firestore: $e');
     }
   }
 
   static Future<void> updateUserFCMToken(String userEmail) async {
     if (userEmail.isEmpty) {
-      print('Error: userEmail esta vacio, no se puede actualizar FCM token.');
+      debugPrint('Error: userEmail esta vacio, no se puede actualizar FCM token.');
       return;
     }
     try {
@@ -168,18 +168,18 @@ class AuthService {
           'fcmToken': token,
           'tokenActualizacion': FieldValue.serverTimestamp(),
         }, SetOptions(merge: true));
-        print('FCM Token guardado/actualizado para $userEmail: $token');
+        debugPrint('FCM Token guardado/actualizado para $userEmail: $token');
       } else {
-        print('No se pudo obtener el FCM token para $userEmail.');
+        debugPrint('No se pudo obtener el FCM token para $userEmail.');
       }
     } catch (e) {
-      print('Error al guardar/actualizar FCM token para $userEmail: $e');
+      debugPrint('Error al guardar/actualizar FCM token para $userEmail: $e');
     }
   }
 
   static void listenForTokenRefresh() {
     _firebaseMessaging.onTokenRefresh.listen((newToken) async {
-      print("FCM Token se ha refrescado: $newToken");
+      debugPrint("FCM Token se ha refrescado: $newToken");
       String? userEmail = await getCurrentUserEmail();
       if (userEmail != null && userEmail.isNotEmpty) {
         await updateUserFCMToken(userEmail);
@@ -196,16 +196,16 @@ class AuthService {
         try {
           await _googleSignIn.signOut();
         } catch (e) {
-          print('Error cerrando sesion de Google: $e');
+          debugPrint('Error cerrando sesion de Google: $e');
         }
       }
       await prefs.remove(_isLoggedInKey);
       await prefs.remove(_userEmailKey);
       await prefs.remove(_loginMethodKey);
       _authStateController.add(false);
-      print('Sesion cerrada exitosamente');
+      debugPrint('Sesion cerrada exitosamente');
     } catch (e) {
-      print('Error cerrando sesion: $e');
+      debugPrint('Error cerrando sesion: $e');
       final prefs = await SharedPreferences.getInstance();
       await prefs.remove(_isLoggedInKey);
       await prefs.remove(_userEmailKey);
@@ -228,7 +228,7 @@ class AuthService {
       }
       return null;
     } catch (e) {
-      print('Error obteniendo datos del usuario: $e');
+      debugPrint('Error obteniendo datos del usuario: $e');
       return null;
     }
   }

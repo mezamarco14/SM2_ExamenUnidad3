@@ -10,7 +10,7 @@ import 'widgets/barralateral.dart';
 import 'widgets/LeyendaMapa.dart';
 import 'widgets/alternar_boton.dart';
 import 'widgets/botonEmergencia.dart';
-import 'screenRutaSegura.dart';
+import 'screen_ruta_segura.dart.dart';
 
 class ScreenPrincipal extends StatefulWidget {
   const ScreenPrincipal({super.key});
@@ -354,7 +354,7 @@ class _ScreenPrincipalState extends State<ScreenPrincipal> {
                 onPressed: () {
                   if (mounted) {
                     Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const ScreenRutaSegura()),
+                      MaterialPageRoute(builder: (context) => const screen_ruta_segura.dart()),
                     );
                   }
                 },
