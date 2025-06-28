@@ -21,10 +21,11 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+        
+      - name: Run unit tests
+        run: flutter test
 
       - name: Analyze code
         run: flutter analyze
 
-      - name: Run unit tests
-        run: flutter test
 
